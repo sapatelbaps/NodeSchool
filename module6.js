@@ -3,30 +3,28 @@
 var path = require("path");
 var fs = require("fs");
 
-module.exports = function(dirPath, filterExtValue) {
+module.exports = function(dirPath, filterExtValue,callback) {
   if (dirPath.isEmpty) return "Please provide valid directory path.";
   
   if (filterExtValue.isEmpty)
     console.log(
       "Warning: No filter extension value is provided so all files from the directory are listed."
     );
+
   fs.readdir(dirPath, function(error, files) {
-    console.log("inside method");
     if (error) { 
-        console.log(error);        
         return error;
     }
-    console.log(filterExtValue);
+    
     if (files.length == 0) return "Empty directory.";
 
-    var filteredFiles;
     // Need to improve extension checking condition.
-    filesList.forEach(element => {
-      if (path.extname(element) == "." + ext)
-        //console.log(element);
-        filteredFiles.push(element);
+    files.forEach(element => {
+      if (path.extname(element) == "." + filterExtValue)
+        callback(element);
     });
-    return filteredFiles;
+    //return filteredFiles;
+
   });
 };
 

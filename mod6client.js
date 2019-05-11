@@ -1,12 +1,10 @@
 // Client of module6.js
-// usage: 
+// usage:
 
-var module6 = require('./module6.js');
+var module6 = require("./module6.js");
 
-module6('E:\PersonalGit\sapatelbaps\NodeSchool','js',
-    function callBack(err,files){
-        //console.log('hello');        
-    files.forEach(element => {
-        console.log(element);        
-    });
-});
+module6("E:\\PersonalGit\\sapatelbaps\\NodeSchool", "js", localFunc);
+
+function localFunc(fileName){
+    console.log(fileName);    
+}
