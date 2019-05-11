@@ -1,5 +1,6 @@
-//console.log("HELLO WORLD");
-//console.log(process.argv);
+// console.log("HELLO WORLD");
+// console.log(process.argv);
+// usage: node program.js 11 22 33 44 99
 Number();
 
 function Number(){
