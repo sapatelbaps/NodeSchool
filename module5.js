@@ -7,9 +7,8 @@ function filterFilesFromDir(error, filesList){
     if (error) return console.error(error);
 
     var files = filesList.length;
-    // Need to improve extension checking condition.
     filesList.forEach(element => {        
-        if(path.extname(element) == '.' + process.argv[3].toString())
+        if(path.extname(element) == `.${process.argv[3]}`)
             console.log(element);
     });
 }

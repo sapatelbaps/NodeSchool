@@ -17,10 +17,8 @@ module.exports = function(dirPath, filterExtValue,callback) {
     }
     
     if (files.length == 0) return "Empty directory.";
-
-    // Need to improve extension checking condition.
-    files.forEach(element => {
-      if (path.extname(element) == "." + filterExtValue)
+    files.forEach(element => {      
+      if (path.extname(element) == `.${filterExtValue}`)
         callback(element);
     });
     //return filteredFiles;
