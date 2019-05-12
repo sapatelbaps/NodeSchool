@@ -4,31 +4,36 @@ var path = require("path");
 var fs = require("fs");
 
 module.exports = function(dirPath, filterExtValue,callback) {
-  if (dirPath.isEmpty) return "Please provide valid directory path.";
+
+  const isEmpty = function(input) {
+    if (typeof input === "array") {
+      return input.length === 0;
+    }
+    return !input || Object.keys(input).length === 0;
+  };
   
-  if (filterExtValue.isEmpty)
-    console.log(
-      "Warning: No filter extension value is provided so all files from the directory are listed."
-    );
+  if (dirPath.isEmpty) return callback('');
+  
+  if (filterExtValue.isEmpty){
+    console.log("Warning: No filter extension value is provided so all files from the directory are listed.");
+    callback('');
+    }
 
   fs.readdir(dirPath, function(error, files) {
-    if (error) { 
-        return error;
-    }
+    var logFilePath = 'E:\\PersonalGit\\sapatelbaps\\NodeSchool\\Logs\\LogFile-' + String(Math.floor((Math.random() * 1000) + 1)) + '.txt';    
+    var logData = dirPath.concat(' : Files => ',files.length.toString());
+    //console.log(logData);
+
+    /* fs.writeFile(logFilePath,logData,(err) => {
+      if (err) return callback(err);
+    }); */
+
+    if (error) return callback(error);
+    if (files.length == 0) return callback(error);
     
-    if (files.length == 0) return "Empty directory.";
-    files.forEach(element => {      
-      if (path.extname(element) == `.${filterExtValue}`)
+    files.forEach(element => {
+      if (path.extname(element) === `.${filterExtValue}`)
         callback(element);
     });
-    //return filteredFiles;
-
   });
-};
-
-const isEmpty = function(input) {
-  if (typeof input === "array") {
-    return input.length === 0;
-  }
-  return !input || Object.keys(input).length === 0;
 };
