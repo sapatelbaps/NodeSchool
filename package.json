@@ -5650,6 +5650,7 @@
       "resolved": "https://registry.npmjs.org/sprintf/-/sprintf-0.1.5.tgz",
       "version": "0.1.5"
     },
+    "strftime": "^0.10.0",
     "string-to-stream": {
       "integrity": "sha512-QySF2+3Rwq0SdO3s7BAp4x+c3qsClpPQ6abAmb0DGViiSBAkT5kL6JT2iyzEVP+T1SmzHrQD1TwlP9QAHCc+Sw==",
       "requires": {
