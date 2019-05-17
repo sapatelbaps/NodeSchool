@@ -20,11 +20,10 @@ module.exports = function(dirPath, filterExtValue,callback) {
     }
 
   fs.readdir(dirPath, function(error, files) {
-    var logFilePath = 'E:\\PersonalGit\\sapatelbaps\\NodeSchool\\Logs\\LogFile-' + String(Math.floor((Math.random() * 1000) + 1)) + '.txt';    
+    /* var logFilePath = 'E:\\PersonalGit\\sapatelbaps\\NodeSchool\\Logs\\LogFile-' + String(Math.floor((Math.random() * 1000) + 1)) + '.txt';    
     var logData = dirPath.concat(' : Files => ',files.length.toString());
     //console.log(logData);
-
-    /* fs.writeFile(logFilePath,logData,(err) => {
+    fs.writeFile(logFilePath,logData,(err) => {
       if (err) return callback(err);
     }); */
 
