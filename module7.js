@@ -1,5 +1,5 @@
 // Module 7 - http.get request.
-// node module7.js 'http://www.classical.net'
+// node module7.js http://www.classical.net
 http = require('http');
 
 http.get(process.argv[2],function callback (response) {
