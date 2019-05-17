@@ -12,8 +12,7 @@ http.get(process.argv[2], function (response) {
       data = data.toString();
       console.log(data.length);
       console.log(data);
-      
-      // Replace new line with empty character
+            // Replace new line with empty character
       // console.log(data.toString().replace(/\n/g,''));
     }));
   }).on('error', showError);
