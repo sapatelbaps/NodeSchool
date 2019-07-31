@@ -41,8 +41,10 @@ function binarySearch1(numbersArray){
     } else if (numbersArray[index] < x){
         binarySearch1(numbersArray.slice(index,length));
     } else if( numbersArray[index] == x){
+      console.log('found');      
         return true;
     } else {
+      console.log('not found');
         return false;
     }
 }
