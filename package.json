@@ -5383,6 +5383,7 @@
       "resolved": "https://registry.npmjs.org/msee/-/msee-0.3.5.tgz",
       "version": "0.3.5"
     },
+    "mssql": "^5.1.0",
     "mustache": {
       "integrity": "sha1-v1uSK49Azc+5HANdzZFhENFiH5s=",
       "resolved": "https://registry.npmjs.org/mustache/-/mustache-0.8.2.tgz",
