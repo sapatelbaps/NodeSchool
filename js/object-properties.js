@@ -4,5 +4,5 @@ var food = {
 
   console.log(food.types);
   //console.log(food['types']);
-  
+    
   
