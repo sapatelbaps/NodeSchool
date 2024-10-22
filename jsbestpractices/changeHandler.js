@@ -1,5 +1,12 @@
 var balanceManager = require("./balanceManager");
 
+const coinValues = {
+  'p': 1,
+  'n': 5,
+  'd': 10,
+  'q': 25,
+};
+
 module.exports = {
   getAmount: function (coinType) {
     // COINS:
@@ -7,18 +14,11 @@ module.exports = {
     // [n]ickel
     // [d]ime
     // [q]uarter
-    let coinValues = {
-      p: 1,
-      n: 5,
-      d: 10,
-      q: 25,
-    };
 
-    if (coinValues.hasOwnProperty(coinType)) {
-      return coinValues[coinType];
-    } else {
+    if (!coinValues.hasOwnProperty(coinType)) {
       throw new Error("Unrecognized coin " + coinType);
     }
+    return coinValues[coinType];
   },
 
   convertToChange: function (amount) {
@@ -32,8 +32,10 @@ module.exports = {
         amount = parseInt(amount % this.getAmount(coin));
       }
     }
-    
-    return change.reverse();
+
+    console.log(change);
+
+    return change;
   },
 
   getDivider: function (amount, coin) {
